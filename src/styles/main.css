@@ -1,9 +1,17 @@
+@import url('reset.css');
+
 body {
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background-color: #e3f2fd;
+  /* background: radial-gradient(
+    circle,
+    rgba(218, 150, 213, 0.907527977011117) 0%,
+    rgba(200, 190, 197, 1) 100%
+  ); */
+  background: url('../assets/baixados.jpeg');
+  background-size: inherit;
   color: #fff;
 }
 
@@ -11,11 +19,11 @@ body {
   width: 780px;
   border-radius: 20px;
   padding: 35px 40px;
-  background-color: black;
+  background-color: rgb(255, 0, 0);
 }
 
 .container header {
-  color: #b2b2b2;
+  color: #ffbb00;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -37,7 +45,8 @@ header .column span {
 }
 
 .volume-slider input {
-  accent-color: #fff;
+  cursor: pointer;
+  accent-color: #068ded;
 }
 
 .keys-check input {
@@ -45,16 +54,17 @@ header .column span {
   height: 30px;
   appearance: none;
   border-radius: 30px;
-  background-color: #4b4b4b;
+  background-color: #ffbb00;
   cursor: pointer;
   position: relative;
 }
 
 .keys-check input::before {
-  content: "";
+  /* content: 'Oi'; */
+  content: '';
   height: 20px;
   width: 20px;
-  background-color: #8c8c8c;
+  background-color: #068ded;
   top: 50%;
   left: 0.3rem;
   border-radius: inherit;
@@ -65,13 +75,15 @@ header .column span {
 
 .keys-check input:checked::before {
   left: 2.1rem;
-  background-color: #fff;
+  background-color: #068ded;
 }
 
 .piano-keys {
   display: flex;
   margin-top: 40px;
+  justify-content: center;
 }
+
 .piano-keys .key {
   cursor: pointer;
   user-select: none;
@@ -108,15 +120,22 @@ header .column span {
 }
 
 .piano-keys .white.active {
-  box-shadow: inset -5px 5px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: inset -5px 5px 20px rgba(221, 236, 5, 0.9);
   background: linear-gradient(to bottom #fff 0%, #eee 100%);
 }
 
 .piano-keys .black.active {
-  box-shadow: inset -5px 5px 10px rgba(255, 255, 255, 0.1);
-  background: linear-gradient(to bottom #000, #434343);
+  box-shadow: inset -5px 5px 10px rgba(227, 216, 6, 0.9);
+  background: linear-gradient(to bottom #fff 0%, #edf109 100%);
 }
 
 .piano-keys .key.hide span {
   display: none;
+}
+
+@media (orientation: landscape) {
+  .piano-keys {
+    flex-direction: row;
+    margin-top: 20px;
+  }
 }
